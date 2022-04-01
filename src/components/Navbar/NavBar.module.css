@@ -2,3 +2,12 @@
   grid-area: n;
   background-color: rgb(47, 126, 7);
 }
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+.item a.active {
+  color: black;
+}

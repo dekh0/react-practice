@@ -5,5 +5,13 @@
     "n c";
   grid-template-rows: 100px 1000px;
   grid-template-columns: 200px 10fr;
-  grid-gap: 4px;
+  /* grid-gap: 4px; */
+}
+
+.wrapper-profile {
+  background-color: rgb(4, 208, 86);
+  padding: 20px;
+  .content {
+    grid-area: c;
+  }
 }

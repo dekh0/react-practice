@@ -1,4 +1,5 @@
 .ProfileHeader {
   grid-area: c;
   background-color: rgb(91, 238, 103);
+  margin: 10px;
 }

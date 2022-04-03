@@ -1,0 +1,5 @@
+.Posts {
+  grid-area: c;
+  background-color: rgb(20, 131, 30);
+  margin: 10px;
+}

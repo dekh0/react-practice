@@ -4,17 +4,3 @@
     "di ms";
   grid-template-columns: 2fr 10fr;
 }
-
-.DialogsItems {
-  grid-area: di;
-  background-color: rgb(55, 255, 0);
-}
-
-.Messages {
-  grid-area: ms;
-  background-color: rgb(174, 255, 175);
-}
-
-.DialogsItem {}
-
-.Message {}

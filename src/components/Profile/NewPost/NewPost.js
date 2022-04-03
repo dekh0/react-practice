@@ -1,8 +1,13 @@
+import React from 'react';
 import s from './NewPost.module.css';
-function NewPost() {
+function NewPost(props) {
+
+  let newPostElement = React.createRef();
+
   return (
     <div className={s.NewPost}>
-     <input type="text"/><input type='button' value={'de'}/>
+      <textarea ref={newPostElement}></textarea>
+      <button onClick={props.addPost} >post</button>
     </div>
   );
 }

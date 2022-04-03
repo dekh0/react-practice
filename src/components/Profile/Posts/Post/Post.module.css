@@ -1,4 +1,11 @@
 .Post {
   grid-area: c;
   background-color: rgb(91, 238, 103);
+  margin: 10px;
+}
+
+.Post img {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
 }

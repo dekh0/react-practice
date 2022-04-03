@@ -1,17 +1,17 @@
 
 import NewPost from './NewPost/NewPost';
-import Posts from './Posts/Posts/Posts';
+import Posts from './Posts/Posts';
 import ProfileHeader from './ProfileHeader/ProfileHeader';
 import s from './Profile.module.css';
 
-function Content() {
+function Profile(props) {
   return (
-    <div className={s.content}>
+    <div className={s.Profile}>
       <ProfileHeader />
-      <NewPost />
-      <Posts />
+      <NewPost addPost={props.addPost}  />
+      <Posts postsData={props.state.postsData} />
     </div>
   );
 }
 
-export default Content;
+export default Profile;

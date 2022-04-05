@@ -1,3 +1,5 @@
+let rerender = () => { }
+
 let state = {
   dialogs: {
     dialogsData: [
@@ -20,18 +22,19 @@ let state = {
   },
   posts: {
     postsData: [
-      { id: 1, post: 'ЛЯГУШЕЬ ' },
-      { id: 2, post: 'ПРИВЕТ' },
-      { id: 3, post: 'покушал' },
-      { id: 4, post: 'хочу кушать' },
-      { id: 5, post: 'МОй первый пост: ква' }
+
     ]
   }
 }
 
+export let observer = (observer) => {
+  rerender = observer;
+}
+
 export let addPost = (postMessage) => {
-  let post = {id:6, post: 'скушай кузнечика!'}
+  let post = { id: 6, post: postMessage }
   state.posts.postsData.push(post);
+  rerender(state);
 }
 
 

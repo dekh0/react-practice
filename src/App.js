@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import NavBar from './components/Navbar/NavBar';
@@ -7,22 +8,27 @@ import { Route, Routes } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import { BrowserRouter } from 'react-router-dom';
 
 function App(props) {
   return (
-    <div className="wrapper">
-      <Header />
-      <NavBar />
-      <div className="wrapper-profile">
-        <Routes>
-          <Route path='/dialogs' element={<Dialogs state={props.state.dialogs} />} />
-          <Route path='/profile' element={<Profile state={props.state.posts} addPost={props.addPost} />} />
-          <Route path='/news,' element={<News />} />
-          <Route path='/music' element={<Music />} />
-          <Route path='/settings' element={<Settings />} />
-        </Routes>
-      </div>
-    </div>
+    <BrowserRouter>
+      <React.StrictMode>
+        <div className="wrapper">
+          <Header />
+          <NavBar />
+          <div className="wrapper-profile">
+            <Routes>
+              <Route path='/dialogs' element={<Dialogs state={props.state.dialogs} />} />
+              <Route path='/profile' element={<Profile state={props.state.posts} addPost={props.addPost} />} />
+              <Route path='/news,' element={<News />} />
+              <Route path='/music' element={<Music />} />
+              <Route path='/settings' element={<Settings />} />
+            </Routes>
+          </div>
+        </div>
+      </React.StrictMode>
+    </BrowserRouter>
   );
 }
 

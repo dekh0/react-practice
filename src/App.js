@@ -18,10 +18,10 @@ function App(props) {
         <NavBar />
         <div className="wrapper-profile">
           <Routes>
-            {/* <Route path='/dialogs'
+            <Route path='/dialogs'
               element={<Dialogs
-                state={props.state.dialogs}
-              />} /> */}
+                store={props.store}
+              />} />
             <Route path='/profile'
               element={<Profile
                 profilePage={props.state.profilePage}

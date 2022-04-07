@@ -1,17 +1,29 @@
 import './index.css';
-import state, { observer } from './redux/state'
-import React from 'react';
-import './index.css';
 import App from './App';
-import { addPost } from './redux/state';
 import { createRoot } from 'react-dom/client';
-const container = document.getElementById('root');
-const root = createRoot(container);
+import store from './redux/store';
+import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import React from 'react';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
 
 
-export let rerender = (state) => {
-  root.render(<App state={state} addPost={addPost} />);
+
+let rerender = (state) => {
+  root.render(
+    <BrowserRouter>
+      <App state={state} store={store} dispatch={store.dispatch.bind(store)} />
+    </BrowserRouter>
+  );
 }
-rerender(state);
-observer(rerender);
+
+rerender(store.getState());
+
+store.subscribe(() => {
+  let state = store.getState();
+  rerender(state);
+});
 

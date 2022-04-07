@@ -1,4 +1,5 @@
 import s from './DialogItem.module.css';
+import React from 'react';
 
 function DialogsItem(props) {
   return (

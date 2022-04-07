@@ -1,4 +1,5 @@
 import s from './ProfileHeader.module.css';
+import React from 'react';
 function ProfileHeader() {
   return (
     <div className={s.ProfileHeader}>

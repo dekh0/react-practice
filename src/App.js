@@ -8,27 +8,33 @@ import { Route, Routes } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import { BrowserRouter } from 'react-router-dom';
+
 
 function App(props) {
   return (
-    <BrowserRouter>
-      <React.StrictMode>
-        <div className="wrapper">
-          <Header />
-          <NavBar />
-          <div className="wrapper-profile">
-            <Routes>
-              <Route path='/dialogs' element={<Dialogs state={props.state.dialogs} />} />
-              <Route path='/profile' element={<Profile state={props.state.posts} addPost={props.addPost} />} />
-              <Route path='/news,' element={<News />} />
-              <Route path='/music' element={<Music />} />
-              <Route path='/settings' element={<Settings />} />
-            </Routes>
-          </div>
+    <React.StrictMode>
+      <div className="wrapper">
+        <Header />
+        <NavBar />
+        <div className="wrapper-profile">
+          <Routes>
+            {/* <Route path='/dialogs'
+              element={<Dialogs
+                state={props.state.dialogs}
+              />} /> */}
+            <Route path='/profile'
+              element={<Profile
+                profilePage={props.state.profilePage}
+                dispatch={props.dispatch}
+              />} />
+            <Route path='/news,' element={<News />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
         </div>
-      </React.StrictMode>
-    </BrowserRouter>
+      </div>
+    </React.StrictMode>
+
   );
 }
 
